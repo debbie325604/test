@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>這是作業HW10網站</title>
+    <script>
+        var BMI={};
+       BMI.getBMI=function(a,b){
+          var bmi=b/((a/100)*(a/100));
+          return bmi;
+        };
+        function Cal(form){
+          var a=eval(form.height.value);
+          var b=eval(form.weight.value);
+          var bmi=eval(form.BMI.value);
+          var bmiValue =BMI.getBMI(a,b);
+          form.BMI.value= bmiValue ;
+        }
+      </script>
+  </head>
+  <body>
+    <header>
+        <div class="container-fluid">
+        <div class="row text-center border border-primary">
+            這是WEB測試環境
+        </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container-fluid">
+            <div class="dropdown">
+                <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  作業區
+                </a>
+              
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="https://drv.tw/~s1084336@g.ncyu.edu.tw/gd/test2/test3.html">HW02-Table表格製作</a></li>
+                  <li><a class="dropdown-item" href="https://drv.tw/~s1084336@g.ncyu.edu.tw/gd/test2/test3.html">HW03-span&div表格製作</a></li>
+                  <li><a class="dropdown-item" href="https://drv.tw/~s1084336@g.ncyu.edu.tw/gd/test4/test4.html">HW04-內部格式化製作</a></li>
+                  <li><a class="dropdown-item" href="https://drv.tw/~s1084336@g.ncyu.edu.tw/gd/test5/HW05.html">HW05-internal style sheet</a></li>
+                  <li><a class="dropdown-item" href="https://drv.tw/~s1084336@g.ncyu.edu.tw/gd/HW06/HW06.html">HW06-html5版面設計</a></li>
+                  <li><a class="dropdown-item" href="https://drv.tw/~s1084336@g.ncyu.edu.tw/gd/HW07/BMI.html">HW07-BMI計算器</a></li>
+                  <li><a class="dropdown-item" href="https://drv.tw/~s1084336@g.ncyu.edu.tw/gd/HW08/HW08.html">HW08-bootstrap版面設計</a></li>
+                  <li><a class="dropdown-item" href="https://drv.tw/~s1084336@g.ncyu.edu.tw/gd/HW09/HW09.html">HW09-bootstrap版面設計2</a></li>
+                  <li><a class="dropdown-item" href="https://drv.tw/~s1084336@g.ncyu.edu.tw/gd/HW10/HW10.html">HW10-bootstrap版面設計3</a></li>
+                </ul>
+              </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        (第一個card)
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-text">第一種BMI做法：沒有按鈕的</h5>
+                                <p class="card-text">
+                                    <form oninput="result.value=parseFloat(b.value)/((parseFloat(a.value)/100)*(parseFloat(a.value)/100))">
+                                        <p>你的身高(cm):<input type="number" id="a" name="a" step="any"/></p>
+                                        <p>你的體重(kg):<input type="number" id="b" name="b" step="any" /></p>
+                                        <p>您的BMI(%):<output name="result"></output></p>
+                                      </form>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        (第二個card)
+                        <div class="card text-white bg-success border-success">
+                            <div class="card-body">
+                                <h5 class="card-title">第二種BMI作法：有按鈕的</h5>
+                                <p class="card-text">
+                                    <form method=post>
+                                        你的身高(cm):<input type="text" name="height"><br>
+                                          <br/>
+                                        你的體重(kg):<input type="text" name="weight"><br>
+                                          <br/>
+                                        <input type="button"  value="開始計算" onclick="Cal(this.form)">
+                                          <br/>
+                                          <br/>
+                                          您的BMI(%):<input type="text" name="BMI">
+                                        </form>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p class="text-end text-muted">
+            Updated on 2021/06/15 by Debbie
+        </p>
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
